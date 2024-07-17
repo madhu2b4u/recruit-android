@@ -1,4 +1,4 @@
-package nz.co.test.transactions.activities
+package nz.co.test.transactions.main.presentation.activities
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

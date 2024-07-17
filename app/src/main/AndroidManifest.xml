@@ -19,7 +19,7 @@
         tools:replace="android:appComponentFactory">
 
         <activity
-            android:name=".activities.MainActivity"
+            android:name=".main.presentation.activities.MainActivity"
             tools:ignore="Instantiatable"
             android:exported="true">
             <intent-filter>
