@@ -29,3 +29,7 @@ Try not to spend more than 4 hours on this. You are not necessarily expected to 
 - Please use Native Android frameworks only (no Flutter sorry) 
 - Aside from the above, use whatever libraries you are comfortable with
 - If you are unfamiliar with something in the exercise template, leave a note and change it to better suit you.
+
+## Note
+- I have used Hilt for dependency injection to reduce boilerplate code and leverage its advantages such as better readability, ease of testing, and lifecycle-aware components. Hilt integrates nicely with Jetpack components, providing a seamless DI setup and improving the overall maintainability and scalability of the code.
+
