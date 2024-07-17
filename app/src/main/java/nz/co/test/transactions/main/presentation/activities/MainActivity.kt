@@ -1,13 +1,13 @@
 package nz.co.test.transactions.main.presentation.activities
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
-import nz.co.test.transactions.R
+import dagger.hilt.android.AndroidEntryPoint
+import nz.co.test.transactions.databinding.ActivityMainBinding
+import nz.co.test.transactions.util.BaseActivity
 
-class MainActivity : AppCompatActivity() {
+@AndroidEntryPoint
+class MainActivity : BaseActivity<ActivityMainBinding>() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-    }
+    override fun getViewBinding() = ActivityMainBinding.inflate(layoutInflater)
+
 }

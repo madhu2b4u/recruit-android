@@ -1,7 +1,6 @@
 package nz.co.test.transactions
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.Dispatchers
@@ -22,8 +21,6 @@ import org.junit.Test
 import org.mockito.kotlin.doReturn
 import org.mockito.kotlin.mock
 import retrofit2.Response
-import java.math.BigDecimal
-import java.time.OffsetDateTime
 
 @ExperimentalCoroutinesApi
 class TransactionsRemoteDataSourceTest {
@@ -43,10 +40,10 @@ class TransactionsRemoteDataSourceTest {
     private val mockTransactionList = listOf(
         Transaction(
             id = 1,
-            transactionDate = OffsetDateTime.now(),
+            transactionDate = "2021-04-09T16:46:44",
             summary = "Sample Transaction",
-            credit = BigDecimal(100),
-            debit = BigDecimal(15)
+            credit = 4325.0,
+            debit = 0.0
         )
     )
 

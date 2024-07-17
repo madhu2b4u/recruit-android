@@ -21,8 +21,6 @@ import org.mockito.Mockito
 import org.mockito.MockitoAnnotations
 import org.mockito.kotlin.doReturn
 import org.mockito.kotlin.whenever
-import java.math.BigDecimal
-import java.time.OffsetDateTime
 
 
 @ExperimentalCoroutinesApi
@@ -40,10 +38,10 @@ class TransactionRepositoryTest {
     private val mockTransactionList = listOf(
         Transaction(
             id = 1,
-            transactionDate = OffsetDateTime.now(),
+            transactionDate = "2021-04-09T16:46:44",
             summary = "Sample Transaction",
-            credit = BigDecimal(100),
-            debit = BigDecimal(15)
+            credit = 4325.0,
+            debit = 0.0
         )
     )
 

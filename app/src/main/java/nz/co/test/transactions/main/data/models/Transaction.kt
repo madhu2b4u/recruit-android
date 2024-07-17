@@ -1,7 +1,7 @@
 package nz.co.test.transactions.main.data.models
 
-import java.math.BigDecimal
-import java.time.OffsetDateTime
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
 
 /**
  * Represents a financial transaction.
@@ -12,11 +12,11 @@ import java.time.OffsetDateTime
  * @property debit The amount debited in the transaction, if applicable.
  * @property credit The amount credited in the transaction, if applicable.
  */
-
+@Parcelize
 data class Transaction(
     val id: Int,
-    val transactionDate: OffsetDateTime,
+    val transactionDate: String,
     val summary: String,
-    val debit: BigDecimal,
-    val credit: BigDecimal
-)
+    val debit: Double,
+    val credit: Double
+) : Parcelable

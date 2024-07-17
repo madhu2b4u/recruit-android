@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">Transactions</string>
+    <string name="app_name">Transaction</string>
+    <string name="credit">Credit:+ $%s</string>
+    <string name="debit">Debit:-$%s</string>
+    <string name="gst">GST: $%s</string>
+    <string name="an_error_occurred_please_try_again">An error occurred. Please try again.</string>
 </resources>

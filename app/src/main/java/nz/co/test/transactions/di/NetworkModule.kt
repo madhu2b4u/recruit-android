@@ -1,8 +1,6 @@
 package nz.co.test.transactions.di
 
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
-import com.squareup.moshi.Moshi
-import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -14,7 +12,7 @@ import nz.co.test.transactions.di.qualifiers.MainThread
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
-import retrofit2.converter.moshi.MoshiConverterFactory
+import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 import kotlin.coroutines.CoroutineContext
@@ -50,32 +48,20 @@ class NetworkModule {
     }
 
     /**
-     * Provides a singleton Moshi instance for JSON parsing.
-     */
-
-    @Singleton
-    @Provides
-    fun provideMoshi(): Moshi {
-        return Moshi.Builder()
-            .add(KotlinJsonAdapterFactory())
-            .build()
-    }
-
-    /**
      * Provides a singleton Retrofit instance.
      * This Retrofit instance is configured with:
      * - CoroutineCallAdapterFactory for supporting suspend functions
-     * - MoshiConverterFactory for JSON parsing
+     * - GsonConverterFactory for JSON parsing
      * - Base URL from BuildConfig
      * - Custom OkHttpClient
      */
 
     @Singleton
     @Provides
-    fun providesRetrofit(okHttpClient: OkHttpClient, moshi: Moshi): Retrofit {
+    fun providesRetrofit(okHttpClient: OkHttpClient): Retrofit {
         return Retrofit.Builder()
             .addCallAdapterFactory(CoroutineCallAdapterFactory())
-            .addConverterFactory(MoshiConverterFactory.create(moshi))
+            .addConverterFactory(GsonConverterFactory.create())
             .baseUrl(BuildConfig.BASE_URL)
             .client(okHttpClient)
             .build()
